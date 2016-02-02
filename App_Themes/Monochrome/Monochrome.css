@@ -207,3 +207,10 @@ a.level1:hover, a.level2:hover
 {
     background-color: #509ee7;
 }
+
+img{
+    border: 0;
+}
+.ErrorMessage {
+    color: #FF0000;
+}

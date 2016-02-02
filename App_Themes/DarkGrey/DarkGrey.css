@@ -132,3 +132,10 @@ footer
 {
   font-style: italic;
 }
+
+img{
+    border: 0;
+}
+.ErrorMessage {
+    color: #FF0000;
+}
