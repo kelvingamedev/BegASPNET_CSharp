@@ -50,14 +50,14 @@
     function validatePhoneNumbers(source, args)
     {
         var phoneHome = document.getElementById('<%= textBoxPersonalPhone.ClientID %>');
-        var phoneBusiness = document.getElementById(' <%= textBoxBusinessPhone.ClientID %>');
-        if(phoneHome.value != "" || phoneBusiness.value != "")
+        var phoneBusiness = document.getElementById('<%= textBoxBusinessPhone.ClientID %>');
+        if(phoneHome.value != '' || phoneBusiness.value != '')
         {
-            arg.IsValid = true;
+            args.IsValid = true;
         }
         else
         {
-            arg.IsValid = false;
+            args.IsValid = false;
         }
     }
 </script>
@@ -132,7 +132,7 @@
     </tr>
     <tr>
         <td colspan="3">
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="ErrorMessage" HeaderText="Please correct the following errors:" ShowMessageBox="True" />
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="ErrorMessage" HeaderText="Please correct the following errors:" ShowMessageBox="true"  ShowSummary="false"/>
         </td>
     </tr>
 </table>
