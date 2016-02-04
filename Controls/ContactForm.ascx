@@ -63,7 +63,7 @@
 </script>
 
 
-<table class="auto-style1">
+<table class="auto-style1" id="FormTable" runat="server">
     <tr>
         <td colspan="3" class="auto-style2">
             <h1>Leave a comment</h1>
@@ -117,7 +117,7 @@
     <tr>
         <td class="auto-style4">Comments:</td>
         <td class="auto-style3">
-            <asp:TextBox ID="textBoxComments" runat="server" Height="69px" TextMode="MultiLine" Width="198px"></asp:TextBox>
+            <asp:TextBox ID="textBoxComments" runat="server" Height="69px" TextMode="MultiLine" Width="198px" OnTextChanged="textBoxComments_TextChanged"  ValidateRequestMode="Disabled"> </asp:TextBox>
         </td>
         <td>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Display="Dynamic" ErrorMessage="Enter a comment" ControlToValidate="textBoxComments" CssClass="ErrorMessage">*</asp:RequiredFieldValidator>
@@ -126,15 +126,18 @@
     <tr>
         <td class="auto-style4">&nbsp;</td>
         <td class="auto-style3">
-            <asp:Button ID="sendButton" runat="server" Text="Send" />
+            <asp:Button ID="sendButton" runat="server" Text="Send" OnClick="sendButton_Click" />
         </td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td colspan="3">
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="ErrorMessage" HeaderText="Please correct the following errors:" ShowMessageBox="true"  ShowSummary="false"/>
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="ErrorMessage" HeaderText="Please correct the following errors:"/>
         </td>
     </tr>
 </table>
+<p>
+    <asp:Label ID="Message" Text="Message Sent" Visible="false" runat="server"></asp:Label>
+</p>
 
 
