@@ -35,6 +35,7 @@ public partial class Controls_ContactForm : System.Web.UI.UserControl
     {
         if(Page.IsValid)
         {
+            sendButton.Enabled = false;
             string fileName = Server.MapPath("~/App_Data/ContactForm.txt");
             string mailBody = File.ReadAllText(fileName);
 
@@ -55,8 +56,10 @@ public partial class Controls_ContactForm : System.Web.UI.UserControl
             SmtpClient mySmtp = new SmtpClient();
             mySmtp.Send(myMessage);
 
-            Message.Visible = true;
             FormTable.Visible = false;
+            sendButton.Enabled = true;
+            Message.Visible = true;
+           
         }
     }
 }

@@ -13,6 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div id="PageWrapper">
             <header>
                 <a href="/"></a>
@@ -29,7 +30,6 @@
             </nav>
             <section id="MainContent">
                 <asp:SiteMapPath ID="SiteMapPath1" runat="server">
-
                 </asp:SiteMapPath>
                 <br />
                 <br />
@@ -45,7 +45,7 @@
 
                 <br />
                 <br />
-                <Wrox:Banner ID="Banner1" runat="server" DisplayDirection="Vertical"  />
+                <Wrox:Banner ID="Banner1" runat="server" DisplayDirection="Vertical" />
 
             </aside>
             <footer>

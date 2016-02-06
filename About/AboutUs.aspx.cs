@@ -17,5 +17,12 @@ public partial class About_AboutUs : BasePage
             Banner2.NavigateUrl = "http://imar.spaanjaars.com";
         }
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+
 }
     
