@@ -16,7 +16,7 @@ public partial class Controls_ContactForm : System.Web.UI.UserControl
 
     protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
     {
-        if(!String.IsNullOrEmpty(textBoxBusinessPhone.Text) || !String.IsNullOrEmpty(textBoxPersonalPhone.Text))
+        if (!String.IsNullOrEmpty(textBoxBusinessPhone.Text) || !String.IsNullOrEmpty(textBoxPersonalPhone.Text))
         {
             args.IsValid = true;
         }
@@ -28,12 +28,12 @@ public partial class Controls_ContactForm : System.Web.UI.UserControl
 
     protected void textBoxComments_TextChanged(object sender, EventArgs e)
     {
-      
+
     }
 
     protected void sendButton_Click(object sender, EventArgs e)
     {
-        if(Page.IsValid)
+        if (Page.IsValid)
         {
             sendButton.Enabled = false;
             string fileName = Server.MapPath("~/App_Data/ContactForm.txt");
@@ -56,10 +56,11 @@ public partial class Controls_ContactForm : System.Web.UI.UserControl
             SmtpClient mySmtp = new SmtpClient();
             mySmtp.Send(myMessage);
 
-            FormTable.Visible = false;
-            sendButton.Enabled = true;
+
             Message.Visible = true;
-           
+            MessageSentPara.Visible = true;
+            FormTable.Visible = false;
+            System.Threading.Thread.Sleep(5000);
         }
     }
 }
